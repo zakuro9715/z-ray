@@ -4,9 +4,9 @@
 typedef struct vec3
 {
     double x, y, z;
-} vec3;
+} vec3_t;
 
-double vec3_length_squared(vec3 v);
-double vec3_length(vec3 v);
+double vec3_length_squared(vec3_t v);
+double vec3_length(vec3_t v);
 
 #endif

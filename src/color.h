@@ -3,6 +3,6 @@
 
 #include "vec.h"
 
-typedef vec3 color;
+typedef vec3_t color_t;
 
 #endif

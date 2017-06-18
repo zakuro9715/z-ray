@@ -3,7 +3,7 @@
 
 #include "color.h"
 
-void save_ppm_image(const char * filename, const color *image, const int width, const int height);
+void save_ppm_image(const char * filename, const color_t *image, const int width, const int height);
 
 
 #endif

@@ -6,7 +6,7 @@
 int
 main()
 {
-    color c[10000];
+    color_t c[10000];
     for (int y = 0; y < 100; y++) {
         for (int x = 0; x < 100; x++)  {
             int i = y * 100 + x;
@@ -16,4 +16,4 @@ main()
     }
     save_ppm_image("out.pbm", c, 100, 100);
     return 0;
-}
+}   

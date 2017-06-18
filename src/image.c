@@ -3,7 +3,7 @@
 #include "image.h"
 #include "math_utils.h"
  
-void save_ppm_image(const char * filename, const color *image, const int width, const int height)
+void save_ppm_image(const char * filename, const color_t *image, const int width, const int height)
 {
     FILE *f = fopen(filename, "wb");
 	fprintf(f, "P3\n%d %d\n%d\n", width, height, 255);
