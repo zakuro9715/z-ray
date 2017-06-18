@@ -3,7 +3,7 @@
 
 typedef struct vec3
 {
-    double x, y, z
+    double x, y, z;
 } vec3;
 
 double vec3_length_squared(vec3 v);
