@@ -3,8 +3,8 @@
 #include "image.h"
 #include "color.h"
 
-int
-main()
+
+int main()
 {
     color_t c[10000];
     for (int y = 0; y < 100; y++) {

@@ -10,4 +10,6 @@ add_executable(
     src/random.c   
     src/vec.c
 )
+
+add_definitions("-std=c11 -Wall -pedantic-errors")
 target_link_libraries(z-ray m)
