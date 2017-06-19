@@ -12,6 +12,9 @@ vec3_t vec3_subtract(const vec3_t lhs, const vec3_t rhs);
 vec3_t vec3_multiple(const vec3_t v, const double rhs);
 vec3_t vec3_devide(const vec3_t v, const double rhs);
 
+double vec3_dot(vec3_t v1, vec3_t v2);
+vec3_t vec3_cross(vec3_t v1, vec3_t v2);
+
 vec3_t vec3_normalize(const vec3_t v);
 
 double vec3_length_squared(const vec3_t v);
