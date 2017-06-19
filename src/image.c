@@ -1,19 +1,40 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "image.h"
 #include "math_utils.h"
  
-void save_ppm_image(const char * filename, const color_t *image, const int width, const int height)
+image_t image_new(size_t width, size_t height)
+{
+    color_t *pixels = malloc(height * width * sizeof(color_t));
+    return (image_t) {
+        .width = width,
+        .height = height,
+        .pixels = pixels
+    };
+}
+
+void image_dispose(image_t image)
+{
+    free(image.pixels);
+}
+
+size_t image_size(image_t image)
+{
+    return image.width * image.height;
+}
+
+void image_save_ppm(const char * filename, image_t image)
 {
     FILE *f = fopen(filename, "wb");
-	fprintf(f, "P3\n%d %d\n%d\n", width, height, 255);
-	for (int i = 0; i < width * height; i++)
+	fprintf(f, "P3\n%zd %zd\n%d\n", image.width, image.height, 255);
+	for (int i = 0; i < image_size(image) ; i++)
     {
 		fprintf(
             f, "%d %d %d ",
-            ratio_to_int(image[i].x, 255),
-            ratio_to_int(image[i].y, 255),
-            ratio_to_int(image[i].z, 255)
+            ratio_to_int(image.pixels[i].x, 255),
+            ratio_to_int(image.pixels[i].y, 255),
+            ratio_to_int(image.pixels[i].z, 255)
         );
     }
     fclose(f);

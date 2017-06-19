@@ -3,7 +3,15 @@
 
 #include "color.h"
 
-void save_ppm_image(const char * filename, const color_t *image, const int width, const int height);
+typedef struct image {
+    size_t width, height;
+    color_t *pixels;
+} image_t;
 
+image_t image_new(size_t width, size_t height);
+void image_dispose(image_t image);
+
+size_t image_size(image_t image);
+void image_save_ppm(const char * filename, image_t image);
 
 #endif
