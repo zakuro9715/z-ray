@@ -6,7 +6,15 @@ typedef struct vec3
     double x, y, z;
 } vec3_t;
 
-double vec3_length_squared(vec3_t v);
-double vec3_length(vec3_t v);
+
+vec3_t vec3_add(const vec3_t lhs, const vec3_t rhs);
+vec3_t vec3_subtract(const vec3_t lhs, const vec3_t rhs);
+vec3_t vec3_multiple(const vec3_t v, const double rhs);
+vec3_t vec3_devide(const vec3_t v, const double rhs);
+
+vec3_t vec3_normalize(const vec3_t v);
+
+double vec3_length_squared(const vec3_t v);
+double vec3_length(const vec3_t v);
 
 #endif
