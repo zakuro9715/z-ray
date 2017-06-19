@@ -8,6 +8,7 @@ add_executable(
     src/math_utils.c
     src/image.c 
     src/random.c   
+    src/render.c   
     src/vec.c
 )
 

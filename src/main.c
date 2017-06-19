@@ -1,19 +1,19 @@
 #include <stdio.h>
 
-#include "image.h"
+#include "camera.h"
 #include "color.h"
-
+#include "image.h"
+#include "render.h"
 
 int main()
 {
-    image_t image = image_new(100, 100);
-    for (int y = 0; y < 100; y++) {
-        for (int x = 0; x < 100; x++)  {
-            int i = y * 100 + x;
-            image.pixels[i].x = x / 100.0;
-            image.pixels[i].y = y / 100.0;
-        }
-    }
+    camera_t camera = {
+        (vec3_t) { .x = 50.0, .y = 52.0 , .z = 220.0 },
+	    (vec3_t) { .x = 0.0 , .y = -0.04, .z = -1.0  },
+	    (vec3_t) { .x = 0.0 , .y =  1.0 , .z = 0.0   }
+    };
+
+    image_t image = render(camera, 100, 100, 1, 1);
     image_save_ppm("out.ppm", image);
     image_dispose(image);
     return 0;
