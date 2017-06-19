@@ -4,7 +4,8 @@
 #include "vec.h"
 
 typedef struct camera {
-    vec3_t origin, dir, up;
+    vec3_t position, dir, up;
+    double screen_dist, screen_width, screen_height;
 } camera_t;
 
 #endif

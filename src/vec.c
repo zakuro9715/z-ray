@@ -44,7 +44,7 @@ vec3_t vec3_devide(const vec3_t v, const double rhs)
 inline
 double vec3_dot(vec3_t v1, vec3_t v2)
 {
-    return t1.x * t2.x + t1.y * t2.y + t1.z * t2.z;
+    return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
 }
 
 inline

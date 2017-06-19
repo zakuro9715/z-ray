@@ -6,6 +6,6 @@
 #include "camera.h"
 #include "image.h"
 
-image_t render(camera_t camera, size_t width, size_t height, size_t samples, size_t supersamples);
+image_t render(camera_t camera, size_t width, size_t samples, size_t supersamples);
 
 #endif
