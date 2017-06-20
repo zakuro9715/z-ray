@@ -7,6 +7,7 @@ add_executable(
     z-ray src/main.c
     src/math_utils.c
     src/image.c 
+    src/object.c
     src/random.c   
     src/render.c   
     src/vec.c
