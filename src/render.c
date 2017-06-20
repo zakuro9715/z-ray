@@ -1,14 +1,13 @@
-#include "render.h"
-#include "ray.h"
-
 #include <stdio.h>
 
-color_t calc_radiance(ray_t ray, int depth) {
+#include "ray.h"
+#include "render.h"
+
+color_t calc_radiance(scene_t scene, ray_t ray, int depth) {
     return (color_t) { .x = 0.5, .y = 0, .z = 0 };
 }
 
-
-image_t render(camera_t camera, size_t width, size_t samples, size_t supersamples)
+image_t render(camera_t camera, scene_t scene, size_t width, size_t samples, size_t supersamples)
 {
     size_t height = camera.screen_height * (width / camera.screen_width);
     image_t image = image_new(width, height);
@@ -43,7 +42,7 @@ image_t render(camera_t camera, size_t width, size_t samples, size_t supersample
                         );
 						vec3_t dir = vec3_normalize(vec3_subtract(screen_position, camera.position));
                         color_t rad;
-                        rad = calc_radiance((ray_t) { .origin = camera.position, .dir = dir}, 0);
+                        rad = calc_radiance(scene, (ray_t) { .origin = camera.position, .dir = dir}, 0);
 
 						accumulated_radiance = vec3_add(
                             accumulated_radiance,

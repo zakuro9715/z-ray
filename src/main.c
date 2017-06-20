@@ -1,9 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "camera.h"
 #include "color.h"
 #include "image.h"
 #include "render.h"
+#include "material.h"
+#include "object.h"
+#include "scene.h"
 
 int main()
 {
@@ -14,8 +18,13 @@ int main()
         40, 40, 30
     };
 
-    image_t image = render(camera, 100, 5, 10);
+    scene_t scene = create_cornell_box_scene();
+
+    image_t image = render(camera, scene, 100, 5, 10);
     image_save_ppm("out.ppm", image);
     image_dispose(image);
+
+    free(scene.objects);
+
     return 0;
 }   

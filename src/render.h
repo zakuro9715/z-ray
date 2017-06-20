@@ -5,7 +5,8 @@
 
 #include "camera.h"
 #include "image.h"
+#include "scene.h"
 
-image_t render(camera_t camera, size_t width, size_t samples, size_t supersamples);
+image_t render(camera_t camera, scene_t scene, size_t width, size_t samples, size_t supersamples);
 
 #endif

@@ -9,7 +9,8 @@ add_executable(
     src/image.c 
     src/object.c
     src/random.c   
-    src/render.c   
+    src/render.c
+    src/scene.c
     src/vec.c
 )
 
