@@ -9,6 +9,7 @@ typedef struct ray_hit {
 } ray_hit_t;
 
 typedef struct intersection {
+    unsigned int object_id;
     ray_hit_t hit;
 } intersection_t;
 

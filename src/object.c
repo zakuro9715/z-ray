@@ -3,7 +3,7 @@
 #include "math_utils.h"
 
 
-bool sphere_intersect(const sphere_t * sphere, ray_t ray, intersection_t *out)
+bool sphere_intersect(const sphere_t * sphere, ray_t ray, ray_hit_t * hit)
 {
 	vec3_t p_o = vec3_subtract(sphere->center, ray.origin);
 	double b = vec3_dot(p_o, ray.dir);
@@ -18,18 +18,18 @@ bool sphere_intersect(const sphere_t * sphere, ray_t ray, intersection_t *out)
 	if (t1 < EPS && t2 < EPS)
 		return false;
 
-    out->hit.distance = t1 > EPS ? t1 : t2; 
+    hit->distance = t1 > EPS ? t1 : t2; 
 
-	(out->hit.point) = vec3_add(ray.origin, vec3_multiple(ray.dir, out->hit.distance));
-    out->hit.normal = vec3_normalize(vec3_subtract(out->hit.point, sphere->center));
+	(hit->point) = vec3_add(ray.origin, vec3_multiple(ray.dir, hit->distance));
+    hit->normal = vec3_normalize(vec3_subtract(hit->point, sphere->center));
 	return true;
 }
 
-bool object_intersect(const object_t * object, ray_t ray, intersection_t * out)
+bool object_intersect(const object_t * object, ray_t ray, ray_hit_t * hit)
 {
     switch(object->type)
     {
-        case OBJECT_TYPE_SPHERE: return sphere_intersect(&object->u.sphere, ray, out);
+        case OBJECT_TYPE_SPHERE: return sphere_intersect(&object->u.sphere, ray, hit);
         default: return false;
     }
 }

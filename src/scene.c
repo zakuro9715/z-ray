@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
+#include "math_utils.h"
 #include "scene.h"
 
 scene_t create_cornell_box_scene()
@@ -62,4 +63,26 @@ scene_t create_cornell_box_scene()
     s.objects[7].material.color = (color_t) { .x = 0.25, .y = 0.75, .z = 0.25 };
 
     return s;
+}
+
+bool scene_intersect(scene_t scene, ray_t ray, intersection_t * out)
+{
+    size_t n = sizeof(scene.objects) / sizeof(object_t);
+    out->hit.distance = INF;
+    out->object_id = -1;
+
+    for (int i = 0; i < (int)n; i++)
+    {
+        ray_hit_t hit;
+        if (object_intersect(scene.objects + i, ray, &hit))
+        {
+            if (hit.distance < out->hit.distance)
+            {
+                out->hit = hit;
+                out->object_id = i;
+            }
+        }
+    }
+
+    return out->object_id != -1;
 }

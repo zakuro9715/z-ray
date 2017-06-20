@@ -18,7 +18,7 @@ typedef struct sphere {
     double radius;
 } sphere_t;
 
-bool sphere_intersect(const sphere_t * sphere, ray_t ray, intersection_t *out);
+bool sphere_intersect(const sphere_t * sphere, ray_t ray, ray_hit_t *hit);
 
 
 typedef struct object {
@@ -30,6 +30,6 @@ typedef struct object {
     } u;
 } object_t;
 
-bool object_intersect(const object_t * object, ray_t ray, intersection_t * out);
+bool object_intersect(const object_t * object, ray_t ray, ray_hit_t * hit);
 
 #endif
