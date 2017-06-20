@@ -1,3 +1,8 @@
+#include <float.h>
+
+const double EPS = 1.0 / (1 << 16);
+const double INF = DBL_MAX;
+
 double int_to_ratio(int value, int max)
 {
     return value / (double)max;
