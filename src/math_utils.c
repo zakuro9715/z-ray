@@ -2,6 +2,7 @@
 
 const double EPS = 1.0 / (1 << 16);
 const double INF = DBL_MAX;
+const double PI  = 3.141592765358979;
 
 double int_to_ratio(int value, int max)
 {
