@@ -21,3 +21,9 @@ add_executable(
 
 add_definitions("-std=c11 -Wall -pedantic-errors")
 target_link_libraries(z-ray m)
+
+add_custom_target(run
+    DEPENDS z-ray
+    COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/z-ray
+    COMMAND convert out.ppm out.png
+)
