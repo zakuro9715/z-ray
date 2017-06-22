@@ -3,7 +3,7 @@
 
 extern const double EPS;
 extern const double INF;
-
+extern const double PI;
 
 double int_to_ratio(int value, int max);
 int ratio_to_int(double value, int max);
