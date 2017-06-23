@@ -16,7 +16,6 @@ uint32_t xor128()
     y = z;
     z = w;
     w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
-
     return w;
 }
 

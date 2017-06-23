@@ -6,6 +6,7 @@ typedef struct vec3
     double x, y, z;
 } vec3_t;
 
+extern const vec3_t VEC3_RIGHT, VEC3_LEFT, VEC3_UP, VEC3_DOWN;
 
 vec3_t vec3_add(const vec3_t lhs, const vec3_t rhs);
 vec3_t vec3_subtract(const vec3_t lhs, const vec3_t rhs);

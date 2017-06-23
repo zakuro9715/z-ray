@@ -64,5 +64,5 @@ compile_commands.json
 CTestTestfile.cmake
 
 # output images
-*.ppm
-*.png
+out.ppm
+out.png

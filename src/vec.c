@@ -1,6 +1,12 @@
 #include <math.h>
 #include "vec.h"
 
+const vec3_t VEC3_RIGHT = {  1,  0,  0 };
+const vec3_t VEC3_LEFT  = { -1,  0,  0 };
+const vec3_t VEC3_UP    = {  0,  1,  0 };
+const vec3_t VEC3_DOWN  = {  0, -1,  0 };
+
+
 inline
 vec3_t vec3_add(const vec3_t lhs, const vec3_t rhs)
 {
@@ -53,7 +59,7 @@ vec3_t vec3_cross(vec3_t v1, vec3_t v2)
     return (vec3_t) {
         .x = v1.y * v2.z - v1.z * v2.y,
         .y = v1.z * v2.x - v1.x * v2.z,
-        .z = v1.x * v2.y - v2.y * v1.x
+        .z = v1.x * v2.y - v1.y * v2.x
     };
 }
 

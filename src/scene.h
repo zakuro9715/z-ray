@@ -6,11 +6,16 @@
 #include "ray.h"
 
 typedef struct scene {
-    object_t *objects;
+    size_t objects_n;
+    object_t * objects;
 } scene_t;
 
 scene_t create_cornell_box_scene();
 
+void scene_malloc_objects(scene_t * scene, size_t n);
+void scene_free_objects(scene_t * scene);
+
 bool scene_intersect(scene_t scene, ray_t ray, intersection_t * out);
+object_t * scene_find_object(scene_t scene, unsigned int id);
 
 #endif

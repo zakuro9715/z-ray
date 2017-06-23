@@ -20,7 +20,7 @@ int main()
 
     scene_t scene = create_cornell_box_scene();
 
-    image_t image = render(camera, scene, 100, 5, 10);
+    image_t image = render(camera, scene, 160, 2, 64);
     image_save_ppm("out.ppm", image);
     image_dispose(image);
 

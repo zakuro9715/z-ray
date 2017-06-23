@@ -3,7 +3,7 @@
 
 #include "color.h"
 
-#define REFLECTION_TYPE_LAMBERT (1)
+#define REFLECTION_TYPE_LAMBERT 1
 
 typedef struct material {
     color_t color, emission;

@@ -8,7 +8,6 @@
 #include "ray.h"
 #include "vec.h"
 
-typedef unsigned int object_id_t;
 typedef unsigned int object_type_t;
 
 #define OBJECT_TYPE_SPHERE 1
@@ -22,7 +21,6 @@ bool sphere_intersect(const sphere_t * sphere, ray_t ray, ray_hit_t *hit);
 
 
 typedef struct object {
-    object_id_t id;
     object_type_t type;
     material_t material;
     union {
